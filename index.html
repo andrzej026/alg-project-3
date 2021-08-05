@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <header>
+        <div class="banklogo">
+            <img src="images/Asset 1@3x 1.svg" alt="banklogo">
+        </div>
+        <div>                
+            <ul class="headlist">
+                <li>БАНК</li>
+                <li>БИЗНЕС</li>
+                <li>ИНВЕСТИЦИИ</li>
+                <li>ТРАХОВАНИЕ</li>
+                <li>MOBILE</li>
+                <li>ПУТЕШЕСТВИЯ</li>
+                <li>РАЗВЛЕЧЕНИЯ</li>
+            </ul>
+        </div>
+        <div>
+            <button class="enterbutton">ВОЙТИ</button>
+        </div>
+    </header>
+    <main>
+        <h1>Конвертор валют онлайн</h1>
+        <div class="converter">
+            <div class="change">
+                <p>У меня есть</p>
+                <div class="exchanges">
+                    <div class="buttons-change">
+                        <button class="button-change active-change" value="RUB">RUB</button>
+                        <button class="button-change" value="USD">USD</button>
+                        <button class="button-change" value="EUR">EUR</button>
+                        <button class="button-change" value="BYN">BYN</button>
+                    </div>
+                    <div class="inputs">
+                        <input class="input-change" value="1" type="number">
+                        <p class="current-change-rate">Набыць бы даляры, прадаць бы рублі</p>
+                    </div>
+                </div>
+            </div>
+            <div class="get">
+                <p>Хочу приобрести</p>
+                <div class="exchanges">
+                    <div class="buttons-get">
+                        <button class="button-get" value="RUB">RUB</button>
+                        <button class="button-get active-get" value="USD">USD</button>
+                        <button class="button-get" value="EUR">EUR</button>
+                        <button class="button-get" value="BYN">BYN</button>
+                    </div>
+                    <div class="inputs">
+                        <input class="input-get" value="1" type="number">
+                        <p class="current-get-rate">А потым падалей ад гэтай зямлі</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
