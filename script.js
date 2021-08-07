@@ -33,7 +33,8 @@ function goChange() {
             const buttonsGetActive = document.querySelector('.active-get');
             buttonsChangeActive.classList.remove('active-change');
             event.target.classList.toggle('active-change');
-            inputGet.value = (inputChange.value * allRates[buttonsGetActive.value] / allRates[buttonsChangeActive.value]).toFixed(4);
+            console.log(event.target);
+            inputGet.value = (inputChange.value * allRates[buttonsGetActive.value] / allRates[event.target.value]).toFixed(4);
             goBaseRate();
         })
     }
@@ -52,7 +53,7 @@ function goGet() {
             const buttonsGetActive = document.querySelector('.active-get');
             buttonsGetActive.classList.remove('active-get');
             event.target.classList.toggle('active-get');
-            inputGet.value = (inputChange.value * allRates[buttonsGetActive.value] / allRates[buttonsChangeActive.value]).toFixed(4);
+            inputGet.value = (inputChange.value * allRates[event.target.value] / allRates[buttonsChangeActive.value]).toFixed(4);
             goBaseRate();
         })
     }
