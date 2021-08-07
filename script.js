@@ -16,7 +16,7 @@ async function getCurrency() {
     }
     const buttonsChangeActive = document.querySelector('.active-change');
     const buttonsGetActive = document.querySelector('.active-get');
-    inputGet.value = (inputChange.value * allRates[buttonsGetActive.value] / allRates[buttonsChangeActive.value]).toFixed(4)
+    inputGet.value = (inputChange.value * allRates[buttonsGetActive.value] / allRates[buttonsChangeActive.value]).toFixed(4);
     goBaseRate();
 }
 getCurrency();
