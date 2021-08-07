@@ -1,9 +1,7 @@
 const buttonsChange = document.getElementsByClassName('button-change');
 const buttonsGet = document.getElementsByClassName('button-get');
-// const buttonsChangeActive = document.querySelector('.active-change'); 
-// const buttonsGetActive = document.querySelector('.active-get');
-const inputChange = document.querySelector('.input-change')
-const inputGet = document.querySelector('.input-get')
+const inputChange = document.querySelector('.input-change');
+const inputGet = document.querySelector('.input-get');
 const apidata = 'https://api.exchangerate.host/latest';
 
 const currentChangeRate = document.querySelector('.current-change-rate');
@@ -14,17 +12,16 @@ async function getCurrency() {
     const result = await response.json();
     const rates = result.rates;
     for (let key in rates) {
-        allRates[key] = rates[key]
+        allRates[key] = rates[key];
     }
     const buttonsChangeActive = document.querySelector('.active-change');
     const buttonsGetActive = document.querySelector('.active-get');
     inputGet.value = (inputChange.value * allRates[buttonsGetActive.value] / allRates[buttonsChangeActive.value]).toFixed(4)
     goBaseRate();
 }
-getCurrency()
+getCurrency();
 
-let allRates = {}
-console.log(allRates);
+let allRates = {};
 
 function goChange() {
     for(let i = 0; i < buttonsChange.length; i++) {
@@ -33,7 +30,6 @@ function goChange() {
             const buttonsGetActive = document.querySelector('.active-get');
             buttonsChangeActive.classList.remove('active-change');
             event.target.classList.toggle('active-change');
-            console.log(event.target);
             inputGet.value = (inputChange.value * allRates[buttonsGetActive.value] / allRates[event.target.value]).toFixed(4);
             goBaseRate();
         })
@@ -71,4 +67,3 @@ function goBaseRate() {
     currentChangeRate.textContent = `1 ${buttonsChangeActive.value} = ${(1 * allRates[buttonsGetActive.value] / allRates[buttonsChangeActive.value]).toFixed(4)} ${buttonsGetActive.value}`;
     currentGetRate.textContent = `1 ${buttonsGetActive.value} = ${(1 * allRates[buttonsChangeActive.value] / allRates[buttonsGetActive.value]).toFixed(4)} ${buttonsChangeActive.value}`;
 }
-// goBaseRate();
