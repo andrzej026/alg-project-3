@@ -31,7 +31,7 @@ function goChange() {
         buttonsChange[i].addEventListener('click', function(event) {
             const buttonsChangeActive = document.querySelector('.active-change');
             const buttonsGetActive = document.querySelector('.active-get');
-            buttonsChangeActive.classList.remove('active-change');
+            buttonsChangeActive.clыassList.remove('active-change');
             event.target.classList.toggle('active-change');
             console.log(event.target);
             inputGet.value = (inputChange.value * allRates[buttonsGetActive.value] / allRates[event.target.value]).toFixed(4);
